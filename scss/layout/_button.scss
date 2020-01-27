@@ -1,0 +1,112 @@
+.burger,
+.close {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: none;
+    background: transparent;
+    border: 0;
+
+    &::before,
+    &::after,
+    .burger__middle {
+        content: '';
+        height: 4px;
+        width: 30px;
+        background: $color-gray;
+        position: absolute;
+        left: 8px;
+        top: 5px;
+
+        transition-property: transform;
+        transition-duration: 1s;
+        transform: rotate(0deg);
+    }
+
+    &::after {
+        top: 29px;
+    }
+
+    .burger__middle {
+        top: 17px;
+        opacity: 1;
+        transition-property: opacity;
+        transition-duration: 1s;
+    }
+}
+
+.nav.open {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-10%);
+}
+
+.hidden.burger__middle {
+    opacity: 0;
+}
+
+.close {
+    &::before,
+    &::after {
+        left: 8px;
+        top: 17px;
+        transition-property: transform;
+        transition-duration: 1s;
+        transform: rotate(45deg);
+        background: $color-white;
+    }
+
+    &::after {
+        transform: rotate(-45deg);
+    }
+}
+
+.button-up {
+    position: absolute;
+    height: 47px;
+    width: 47px;
+    right: 51px;
+    bottom: 17px;
+    cursor: pointer;
+    border: 0;
+
+    &::before,
+    &::after {
+        content: '';
+        height: 25px;
+        width: 3px;
+        background-color: $color-blue;
+        position: absolute;
+        top: 11px;
+        left: 16px;
+
+        transform: rotate(30deg);
+
+    }
+
+    &::after {
+        left: 28px;
+
+        transform: rotate(-30deg);
+    }
+
+    &:hover {
+        background-color: $color-blue;
+
+        &::before,
+        &::after {
+            background-color: $color-blue-light;
+        }
+    }
+}
+
+
+@include bp($break-mobile) {
+    .burger {
+        display: block;
+    }
+}

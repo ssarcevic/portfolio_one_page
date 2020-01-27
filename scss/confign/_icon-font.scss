@@ -1,0 +1,61 @@
+@font-face {
+	font-family: "icons";
+	src: url('../iconfonts/icons.eot');
+	src: url('../iconfonts/icons.eot?#iefix') format('eot'),
+		url('../iconfonts/icons.woff') format('woff'),
+		url('../iconfonts/icons.ttf') format('truetype');
+}
+
+@mixin font-styles {
+	font-family: "icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%font {
+	@include font-styles;
+}
+
+@function font-char($filename) {
+	$char: "";
+
+	@if $filename == download-to-storage-drive {
+		$char: "\E001";
+	}
+	@if $filename == icons8-linkedin {
+		$char: "\E002";
+	}
+	@if $filename == phone-call {
+		$char: "\E003";
+	}
+
+	@return $char;
+}
+
+@mixin font($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %font;
+		} @else {
+			@include font-styles;
+		}
+		content: font-char($filename);
+	}
+}
+
+.font-download-to-storage-drive {
+	@include font(download-to-storage-drive);
+}
+.font-icons8-linkedin {
+	@include font(icons8-linkedin);
+}
+.font-phone-call {
+	@include font(phone-call);
+}
+

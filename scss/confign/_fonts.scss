@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'JohnSans';
+    src: url('../fonts/JohnSansTextPro-Regular.woff2') format('woff2'),
+        url('../fonts/JohnSansTextPro-Regular.woff') format('woff'),
+        url('../fonts/JohnSansTextPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JohnSansBold';
+    src: url('../fonts/JohnSansTextPro-Bold.woff2') format('woff2'),
+        url('../fonts/JohnSansTextPro-Bold.woff') format('woff'),
+        url('../fonts/JohnSansTextPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cordale';
+    src: url('../fonts/Cordale-Regular.woff2') format('woff2'),
+        url('../fonts/Cordale-Regular.woff') format('woff'),
+        url('../fonts/Cordale-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

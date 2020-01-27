@@ -1,0 +1,102 @@
+.banner {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.contact {
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+}
+
+.banner__img,
+.contact__img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    opacity: 0.5;
+}
+
+.contact__img {
+    background-attachment: fixed;
+}
+
+.banner__box,
+.contact__box {
+    width: 100%;
+    min-height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: $color-blue-light;
+    border-radius: 10px;
+    box-shadow: 5px 10px 25px $color-red;
+
+    animation: banner-slide 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.contact__box {
+    width: 550px;
+}
+
+@keyframes banner-slide {
+    0% {
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+.banner__box-title,
+.contact__box-title {
+    color: $color-blue;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.banner__box-text,
+.contact__box-text {
+    font-size: 20px;
+    padding: 20px 60px;
+    color: $color-blue;
+}
+
+.contact__box-tag {
+    font-weight: bold;
+}
+
+@include bp($break-mobile) {
+    .banner__box.wrapp,
+    .contact__box.wrapp {
+        max-width: 280px;
+    }
+
+    .banner__box-title,
+    .contact__box-title {
+        font-size: 30px;
+    }
+
+    .banner__box-text {
+        font-size: 18px;
+        padding: 20px 30px;
+    }
+
+    .contact__box-text {
+        font-size: 16px;
+        padding: 20px 0;
+    }
+}
+
